@@ -1,129 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <title>STARMEDIA DRTTEA TV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    #playerWrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+    video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="it"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;STARMEDIA DRTTEA TV&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html, body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: black;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#playerWrapper {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: black;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>video {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>object-fit: contain;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Pulsante audio grande e centrato */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>#muteBtn {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>top: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>left: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translate(-50%, -50%);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 32px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0, 0, 0, 0.7);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>z-index: 20;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: auto;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;div id="playerWrapper"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;video id="vid" autoplay muted playsinline loop&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;source src="https://uc4b7eb49cb79fd33e6a546e61f5.dl.dropboxusercontent.com/cd/0/inline/Cq9bPo68rKjlxzcRjhJ6027z5m46vflZiebBhYBGrv8GN_yDxfN1PIeT7KNkFWD3jA811F7LCSiofR-FSg4bVXjBE2BKJL6NgCISMfiAZLx5X28y6Alm0HyqNItNl_T--MRj8UZ5SnboIO0v0mM3zxUZ/file#" type="video/mp4" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/video&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="muteBtn"&gt;Attiva audio&lt;/button&gt;</p>
-<p class="p1">&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const video = document.getElementById('vid');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const muteBtn = document.getElementById('muteBtn');</p>
-<p class="p1"><span class="Apple-converted-space">  </span>const playerWrapper = document.getElementById('playerWrapper');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Inizia da punto casuale</p>
-<p class="p1"><span class="Apple-converted-space">  </span>video.addEventListener('loadedmetadata', () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>video.currentTime = Math.random() * video.duration;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Funzione per mostrare/nascondere i controlli</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let hideTimer;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>function showControls() {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>muteBtn.style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>clearTimeout(hideTimer);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>hideTimer = setTimeout(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>muteBtn.style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}, 3000);</p>
-<p class="p1"><span class="Apple-converted-space">  </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Listener click sul wrapper (funziona sia in fullscreen che normale)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>playerWrapper.addEventListener('click', showControls);</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Pulsante mute</p>
-<p class="p1"><span class="Apple-converted-space">  </span>muteBtn.addEventListener('click', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>e.stopPropagation();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>video.muted = !video.muted;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>muteBtn.textContent = video.muted ? 'Attiva audio' : 'Disattiva audio';</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Blocca tasto destro e shortcut per saltare</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('contextmenu', e =&gt; e.preventDefault());</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('keydown', e =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const block = [" ", "ArrowRight", "ArrowLeft", "F12"];</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (block.includes(e.key) || (e.ctrlKey &amp;&amp; e.shiftKey &amp;&amp; e.key === "I")) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>e.preventDefault();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Disabilita il double-tap to seek su mobile</p>
-<p class="p1"><span class="Apple-converted-space">  </span>let lastTap = 0;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>video.addEventListener('touchend', (e) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const currentTime = new Date().getTime();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const tapLength = currentTime - lastTap;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>if (tapLength &lt; 300 &amp;&amp; tapLength &gt; 0) {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>e.preventDefault(); // Previene il doppio tap</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>lastTap = currentTime;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>// Disabilita zoom e gesture multitouch (Safari)</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('gesturestart', e =&gt; e.preventDefault());</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('gesturechange', e =&gt; e.preventDefault());</p>
-<p class="p1"><span class="Apple-converted-space">  </span>document.addEventListener('gestureend', e =&gt; e.preventDefault());</p>
-<p class="p1">&lt;/script&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
+
+<div id="playerWrapper">
+  <video id="vid" autoplay muted playsinline loop>
+    <source src="https://video.wixstatic.com/video/d6cb49_2c5df7db6da0478bb1239ce193d3e200/720p/mp4/file.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<script>
+  const video = document.getElementById('vid');
+  const playerWrapper = document.getElementById('playerWrapper');
+
+  // Blocca tasto destro e shortcut per saltare
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    const block = [" ", "ArrowRight", "ArrowLeft", "F12"];
+    if (block.includes(e.key) || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      e.preventDefault();
+    }
+  });
+
+  // Disabilita il double-tap to seek su mobile
+  let lastTap = 0;
+  video.addEventListener('touchend', (e) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    if (tapLength < 300 && tapLength > 0) {
+      e.preventDefault(); // Previene il doppio tap
+    }
+    lastTap = currentTime;
+  });
+
+  // Disabilita zoom e gesture multitouch (Safari)
+  document.addEventListener('gesturestart', e => e.preventDefault());
+  document.addEventListener('gesturechange', e => e.preventDefault());
+  document.addEventListener('gestureend', e => e.preventDefault());
+</script>
+
 </body>
-</html>
